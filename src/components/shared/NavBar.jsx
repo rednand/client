@@ -1,20 +1,26 @@
-import { Flex, Box, Link as StyledLink, Image } from "rebass/styled-components";
-import { Link } from "react-router-dom";
-import { Container } from "./Container";
+import {
+  Flex,
+  Box,
+  Link as StyledLink,
+  Image,
+} from "rebass/styled-components";
+import { Link as RouterLink } from 'react-router-dom'
+import { Container } from "./Container"
+import logo from "./logo.svg";
 
 export const NavBar = () => {
   return (
     <Flex bg="black" color="white" justifyContent="center">
       <Container>
         <Flex px={2} width="100%" alignItems="center">
-          <Link component={StyledLink} variant="nav" to="/">
+          <Image size={20} src={logo} />
+          <StyledLink as={RouterLink} variant="nav" to="/">
             React Query CRUD
-          </Link>
-          <Box mx="auto">
-            <Link component={StyledLink} variant="nav" to="/create-book">
-              + Add new book
-            </Link>
-          </Box>
+          </StyledLink>
+          <Box mx="auto" />
+          <StyledLink as={RouterLink} variant="nav" to="/create-book">
+            + Add new book
+            </StyledLink>
         </Flex>
       </Container>
     </Flex>
